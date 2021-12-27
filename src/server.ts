@@ -43,6 +43,22 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
   } );
 
 
+  console.log("#####");
+  console.log("process.env: " + process.env);
+  console.log("#####");
+  console.log(
+      "username: " + process.env.POSTGRES_USERNAME + "___" +
+      "password: " + process.env.POSTGRES_PASSWORD + "___" +
+      "database: " + process.env.POSTGRES_DATABASE + "___" +
+      "port: " + process.env.POSTGRES_PORT + "___" +
+      "host: " + process.env.POSTGRES_HOST + "___" +
+      "dialect: " + process.env.POSTGRES_DIALECT + "___" +
+      "aws_region: " + process.env.AWS_REGION + "___" +
+      "aws_profile: " + process.env.AWS_PROFILE + "___" +
+      "aws_media_bucket: " + process.env.AWS_MEDIA_BUCKET
+  );
+
+
   // Start the Server
   app.listen( port, () => {
     console.log( `server running ${config.url}` );

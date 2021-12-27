@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-api-feed
+  name: udagram-api-feed
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        service: api-feed
+    spec:
+      containers:
+      - image: junniepat/udagram-api-feed
+        name: udagram-api-feed
+        imagePullPolicy: Always          
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"       
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
